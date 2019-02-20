@@ -1,8 +1,10 @@
 package Z1;
 
 
+import java.time.Duration;
+import java.time.LocalTime;
 
-    public class Algoritms{
+public class Algoritms{
         //algorytm potegowania
         public int power(int x, int y){
 
@@ -88,4 +90,39 @@ package Z1;
             }
             return decimal;
         }
+        public boolean isPrimary(int number){
+            //1. Inicjalizacja licznika podzielnikow
+            int counter = 0;
+            //2. W petli for zliczamy wszytskie liczby naturalne do liczby number
+            //Kazdorazowo sprawdzajac w instrukcji if czy te liczby sa dzielnikami number
+            //TAK- licznik ++
+            //Nie- nic
+            for(int i = 2; i < number; i++){
+                if(number % i == 0){
+                    counter++;
+                }
+            }
+            //3. zwracamy true jesli licznik == 0: false jesli licznik > 0
+            return counter == 0 ? true : false;
+        }
+        public void getPrimaryNumbers(int n){
+            LocalTime lt_start = LocalTime.now();
+            //1. Inicjalizacja licznika zliczen
+            int primaryNumberscounter = 0;
+            int i = 2;
+            //2. W petli while iterujemy po liczbach naturalnych od 0
+            while(primaryNumberscounter <n){
+                if (isPrimary(i)){
+                    primaryNumberscounter++;
+                    System.out.println(i + " ");
+                }
+                i++;
+            }
+            //3. W instrukcji if sprawdzamy czy aktualna liczba jest pierwsza
+            //-> jezeli tak - wypisujemy i zwiekszamy licznik
+            LocalTime lt_stop = LocalTime.now();
+            Duration time_interval = Duration.between(lt_start,lt_stop);
+            System.out.println("\nCzas wykonywania: " + time_interval);
+        }
+
     }

@@ -15,5 +15,8 @@ public class Main {
         System.out.println("DtB: " + a.decimaltoBinary(12));
         System.out.println("DtB: " + a.decimaltoBinary(17));
         System.out.println("BtD: " + a.binarytoDecimal("1100"));
+        System.out.println("Primary: " + a.isPrimary(1));
+        System.out.println("Primary: " + a.isPrimary(13));
+        a.getPrimaryNumbers(5000);
     }
 }
