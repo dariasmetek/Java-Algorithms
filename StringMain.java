@@ -6,5 +6,11 @@ public class StringMain {
         System.out.println("Contains a: " + sc.isCharacter('a'));
         System.out.println("Contains y: " + sc.isCharacter('y'));
         System.out.println("Number of i: " + sc.countAllCharacters('E'));
+
+        //Napisz metode ktora zlicza ilosc wielkich liter w tekscie
+        //65-90 ASCII
+        System.out.println("Number of upper cases: " + sc.countUpperCases());
+
+
     }
 }

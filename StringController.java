@@ -17,7 +17,15 @@ public class StringController {
         }
         return charCounter;
     }
-
+public int countUpperCases(){
+       int upperCaseCounter = 0;
+       for(int i = 0; i < content.length(); i++){
+           if ((int)content.charAt(i) >= 65 && (int)content.charAt(i) <= 90){
+               upperCaseCounter++;
+           }
+       }
+       return upperCaseCounter;
+}
 
     }
 
