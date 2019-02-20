@@ -69,5 +69,23 @@ package Z1;
             }
             return 1;
         }
+        public String decimaltoBinary(int decimal){
+            String binary = "";
+            while (decimal >= 1){
+                binary = binary.concat(String.valueOf(decimal % 2));
+                decimal = decimal / 2;
 
+            }
+            //odwrocenie liczby
+            StringBuffer sb = new StringBuffer(binary);
+            return sb.reverse().toString();
+
+        }
+        public int binarytoDecimal(String binary){
+            int decimal = 0;
+            for (int i = 0; i <binary.length(); i++){
+                decimal = decimal + (((int)binary.charAt(i)-48) * power(2, (binary.length()-1) - i));
+            }
+            return decimal;
+        }
     }
