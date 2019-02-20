@@ -43,4 +43,31 @@ package Z1;
             }
             return sum;
         }
+        public boolean perfectNum(int num){
+            int sum = 0;
+            for (int i = 1; i < num; i++){
+                if (num % i == 0){
+                    sum = sum + i;
+
+                }
+            }
+            return num == sum ? true : false;
+        }
+        public int getNWD(int x, int y){
+            //1. sprawdzenie wiekszej i mniejszej
+            int less = x;
+            int greather = y;
+            if(x > y){
+                less = y;
+                greather = x;
+            }
+            //2. iterujemy w petli i psrawdzamy czy dzielnik less jest tez dzielnikiem greather
+            for(int i = less; less>= 1; i--){
+                if(less % i == 0 && greather % i == 0){
+                    return i;
+                }
+            }
+            return 1;
+        }
+
     }
